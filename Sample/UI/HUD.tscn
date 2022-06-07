@@ -1,0 +1,216 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Font/Montreal-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Font/Montreal-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://SFX/button.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=7]
+load_path = "res://.import/Heart_icon.png-d2368f9c90d832ba2426dd2b04b8c24f.stex"
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="BackColor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0.0705882, 0.305882, 0.784314 )
+
+[node name="StartScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TitleLabel" type="Label" parent="StartScreen"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -48.0
+margin_bottom = -8.0
+custom_colors/font_color = Color( 1, 0.462745, 0.462745, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "King's Ring"
+align = 1
+
+[node name="StartButton" type="Button" parent="StartScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.0
+margin_top = 21.0
+margin_right = 26.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "START"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 0.462745, 0.462745, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "3"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PlayScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LifeLabel" type="Label" parent="PlayScreen"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 38.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+text = "Life: "
+
+[node name="LifeContainer" type="HBoxContainer" parent="PlayScreen"]
+margin_left = 38.0
+margin_top = 8.0
+margin_right = 199.0
+margin_bottom = 24.0
+custom_constants/separation = 0
+
+[node name="Heart1" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart2" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 16.0
+margin_right = 32.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart3" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 32.0
+margin_right = 48.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart4" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 48.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart5" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart6" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 80.0
+margin_right = 96.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart7" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 96.0
+margin_right = 112.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart8" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 112.0
+margin_right = 128.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart9" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 128.0
+margin_right = 144.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="Heart10" type="TextureRect" parent="PlayScreen/LifeContainer" groups=["Heart"]]
+margin_left = 144.0
+margin_right = 160.0
+margin_bottom = 16.0
+texture = SubResource( 7 )
+
+[node name="ScoreLabel" type="Label" parent="PlayScreen"]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 248.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 6 )
+text = "Score: 0"
+
+[node name="GameOverScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverLabel" type="Label" parent="GameOverScreen"]
+anchor_right = 1.0
+margin_top = 32.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 1, 0.462745, 0.462745, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Game Over!"
+align = 1
+valign = 1
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverScreen"]
+anchor_right = 1.0
+margin_top = 64.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 8 )
+text = "Final Score: "
+align = 1
+valign = 1
+
+[node name="QuitButton" type="Button" parent="GameOverScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.0
+margin_top = 22.0
+margin_right = 26.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+
+[node name="ButtonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="GameOverScreen/QuitButton" to="." method="_on_QuitButton_pressed"]
