@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1724363581
+colored-transparent_packed.png::CompressedTexture2D::2837571875410648916::1654145783::1724363583::1::::<><>::
+default_env.tres::Environment::-1::1654584216::0::1::::<><>::
+icon.png::CompressedTexture2D::863832539003081094::1654425617::1724363583::1::::<><>::
+::res://Player/::1654583316
+Player.gd::GDScript::-1::1654426380::0::1::::<>KinematicBody2D<>::
+Player.tscn::PackedScene::-1::1654583316::0::1::::<><>::res://Player/Player.gd<>res://colored-transparent_packed.png
+::res://World/::1654584216
+World.tscn::PackedScene::-1::1654584216::0::1::::<><>::res://colored-transparent_packed.png<>res://Player/Player.tscn

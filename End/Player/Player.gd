@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const inputs = {
 	"move_right": Vector2.RIGHT,
@@ -9,7 +9,7 @@ const inputs = {
 
 var grid_size = 16
 
-onready var raycast = $RayCast2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 
 func _unhandled_input(event):
@@ -20,8 +20,7 @@ func _unhandled_input(event):
 
 func move(action):
 	var destination = inputs[action] * grid_size
-	raycast.cast_to = destination
-	raycast.force_raycast_update()
-	if not raycast.is_colliding():
+	ray_cast_2d.target_position = destination
+	ray_cast_2d.force_raycast_update()
+	if not ray_cast_2d.is_colliding():
 		position += destination
-
