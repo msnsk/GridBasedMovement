@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 const inputs = {
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
